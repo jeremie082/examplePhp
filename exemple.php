@@ -23,4 +23,52 @@
     echo 'Le prix TTC du produit est de '.$prix_ttc.' €.';
 
 ?>
+    echo "<br><br>Exercice 3 <br><br>";
+    $test = "42";
+    var_dump($test);
 
+    echo "<br><br>Exercice 4 <br><br>";
+    $sexe = "F";
+
+    if ($sexe == "F") {
+        echo "Femme";
+    }else {
+        echo "Homme";
+    }
+
+    echo "<br><br>Exercice incrémente +2 <br><br>";
+    $compteur = 0;
+    
+    while ($compteur  <= 20) {
+        
+        $compteur = $compteur + 2;
+        if ($compteur == 10) {
+            echo '<strong>'.$compteur.'</strong><br>';
+        }else {
+            echo $compteur.'<br>';
+        }
+    }
+
+
+    echo "<br><br>Exercice rand tri <br><br>";       
+    $init = 0;
+    while($init < 10){
+        $var = rand(0,100);
+        $tabNbrRand[] = $var;
+        $init++;
+    }
+    print_r($tabNbrRand);   
+    foreach($tabNbrRand as $nombre){        
+        if ($nombre < 50) {
+            $tabInf50[] = $nombre;
+        }
+        if ($nombre >= 50) {
+            $tabSup50[] = $nombre;
+        }  
+    }
+
+    echo '<br><br>Tableau inférieur à 50 <br>';
+    print_r($tabInf50);
+    echo '<br><br>Tableau supérieur à 50 <br>';
+    print_r($tabSup50);
+?>
