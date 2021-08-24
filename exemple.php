@@ -22,7 +22,6 @@
     $prix_ttc = $prix_ht * (1+ $taux_tva /100);
     echo 'Le prix TTC du produit est de '.$prix_ttc.' €.';
 
-?>
     echo "<br><br>Exercice 3 <br><br>";
     $test = "42";
     var_dump($test);
@@ -71,4 +70,46 @@
     print_r($tabInf50);
     echo '<br><br>Tableau supérieur à 50 <br>';
     print_r($tabSup50);
+
+
+    echo "<br><br>Exercice array ville <br><br>"; 
+
+    $pays = array(
+        'france' => 'paris',
+        'allemagne' => 'berlin',
+        'italie' => 'rome'
+    );
+
+    foreach($pays as $ville){
+        echo $ville."<br>";
+
+    }
+
+    function HelloWorld(){
+        echo "Hello world !! ";
+    }
+
+    HelloWorld();
+
+    function HelloWorld1(){
+        $echo = "hello dddddd";
+        return $echo;
+     }
+     
+     echo "<br><br>".HelloWorld1()."<br><br>";
+
+     
+    function afficherMsg($message1, $message2){
+        if (!is_int($message1) AND !is_string($message2)) {
+            echo 'erreur de type';
+        }
+        else{
+            echo $message1." ".$message2;
+        }
+    }
+
+    afficherMsg("ddd", "3333");
+     
+
+
 ?>
