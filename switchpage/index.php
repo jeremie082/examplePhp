@@ -10,31 +10,39 @@
     <title>Document</title>
 </head>
 <body>
-<div class="container">
-        <div class="row">
-            <div class="col-4">
-                 <?php                
-                    include_once("menu.php");
-                ?>
-            </div>
-            <div class="col-8">
-                <?php
-                    if (isset($_GET['site'])) {
-                        switch ($_GET['site']) {
-                            case 'home':
-                                include_once("home.php");
-                                break;
-                            case 'contact':
-                                include_once("contact.php");
-                                break;
-                            default:
-                                echo '404 error';
-                                break;
-                        }
-                    }
-                ?>
-            </div>
-        </div>
+    <div class="container">
+            <?php
+                if (isset($_GET['connect']) AND $_GET['connect'] == "ok") {
+                    ?>
+                    <div class="row">
+                    <div class="col-4">
+                        <?php                
+                            include_once("menu.php");
+                        ?>
+                    </div>
+                    <div class="col-8">
+                        <?php
+                            if (isset($_GET['site'])) {
+                                switch ($_GET['site']) {
+                                    case 'home':
+                                        include_once("home.php");
+                                        break;
+                                    case 'contact':
+                                        include_once("contact.php");
+                                        break;
+                                    default:
+                                        echo '404 error';
+                                        break;
+                                }
+                            }
+                        ?>
+                    </div>
+                </div>
+            <?php    }else{
+                include_once('formLog.php');
+            }
+            ?>
+        
     </div>   
 <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
